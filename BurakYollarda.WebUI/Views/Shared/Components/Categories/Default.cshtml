@@ -1,0 +1,50 @@
+﻿@model List<CategoryViewModel>
+
+
+@for (int i = 0; i < Model.Count; i++)
+{
+
+	<li class="nav-item dropdown">
+		<a asp-controller="home" asp-action="index" asp-route-categoryId="@Model[i].Id" asp-route-categoryName="@Model[i].Name" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-categoryId="@Model[i].Id"> @Model[i].Name </a>
+
+		
+			<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+				@for (int j = 0; j < Model[i].SubCategories.Count; j++)
+		{
+			
+					<li class="dropdown-submenu">
+
+
+
+					<a asp-controller="home" asp-action="index" asp-route-categoryId="@Model[i].Id" asp-route-categoryName="@Model[i].Name" asp-route-subCategoryId="@Model[i].SubCategories[j].Id" asp-route-subCategoryName="@Model[i].SubCategories[j].Name" class="dropdown-item dropdown-toggle">@Model[i].SubCategories[j].Name </a>
+
+
+					<ul class="dropdown-menu">
+						@for (int k = 0; k < Model[i].SubCategories[j].Posts.Count; k++)
+							{
+						<li>
+							
+
+								<a asp-controller="home" asp-action="details" asp-route-Id="@Model[i].SubCategories[j].Posts[k].Id" class="dropdown-item ">@Model[i].SubCategories[j].Posts[k].Title </a>
+							
+
+						</li>
+						}
+					</ul>
+
+
+
+
+
+
+
+				</li>
+				}
+				
+				
+			</ul>
+		
+	</li>
+}
+
+

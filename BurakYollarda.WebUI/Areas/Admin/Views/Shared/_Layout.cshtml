@@ -1,0 +1,110 @@
+﻿<html>
+<head>
+	<title>Burak Yollarda</title>
+	<partial name="_CssPartial"></partial>
+
+
+</head>
+<body>
+
+	<header class="p-3 text-bg-dark">
+		<div >
+
+
+			<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+				<h4>YÖNETİCİ PANELİ</h4>
+			</div>
+		</div>
+
+	</header>
+	<main id="main">
+		
+			<div class="row">
+
+
+				<div class="col-md-2">
+					
+						<div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="height:686px" >
+							<a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+								<svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+								<span class="fs-4">Menü</span>
+							</a>
+							<hr>
+							<ul class="nav nav-pills flex-column mb-auto">
+								<li>
+									<a asp-area="admin" asp-controller="category" asp-action="index" class="nav-link text-white">
+										<svg class="bi pe-none me-2" width="16" height="16"><</svg>
+										Kategoriler
+									</a>
+								</li>
+								<li>
+									<a asp-area="admin" asp-controller="subcategory" asp-action="index" class="nav-link text-white">
+										<svg class="bi pe-none me-2" width="16" height="16"></svg>
+										Alt Kategoriler
+									</a>
+								</li>
+								<li>
+									<a asp-area="admin" asp-controller="post" asp-action="index" class="nav-link text-white">
+										<svg class="bi pe-none me-2" width="16" height="16"></svg>
+										Postlar
+									</a>
+								</li>
+								<li>
+									<a href="#" class="nav-link text-white">
+										<svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+										Yorumlar
+									</a>
+								</li>
+								<li>
+									<a href="~/" class="nav-link text-white">
+										<svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+										Siteye Git
+									</a>
+								</li>
+								<li>
+									<a asp-area="admin" asp-controller="account" asp-action="accountupdate" class="nav-link text-white">
+										<svg class="bi pe-none me-2" width="16" height="16"></svg>
+										Şifre Güncelle
+									</a>
+								</li>
+								<li>
+									<a asp-area="admin" asp-controller="account" asp-action="logout" class="nav-link text-white">
+										<svg class="bi pe-none me-2" width="16" height="16"></svg>
+										Çıkış
+									</a>
+								</li>
+							</ul>
+						</div>
+					
+				</div>
+
+
+
+
+				<main class="col-md-10 ">
+					@RenderBody()
+				</main>
+			</div>
+		
+	</main>
+
+	
+
+	<partial name="_JsPartial"></partial>
+	 @await RenderSectionAsync("Scripts" , required: false)
+
+
+	@await RenderSectionAsync("Update" , required: false)
+	<script>
+        $(document).ready(function() {
+            $('.summernote').summernote(
+                {
+                    height:300
+                }
+            );
+        });
+
+    </script>
+</body>
+</html>

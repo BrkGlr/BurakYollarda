@@ -1,0 +1,9 @@
+﻿
+ @section Update{
+     <script>
+		@if (!string.IsNullOrWhiteSpace(TempData["UpdateMessage"]?.ToString()))
+		{
+			@:toastr.success("@TempData["UpdateMessage"].ToString()");
+		}
+	</script>
+ }

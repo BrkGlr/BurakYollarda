@@ -1,0 +1,22 @@
+﻿@model List<SubCategoryViewModel>
+
+	@*@for (int i = 0; i < Model.Count; i++)
+			{
+				<a asp-controller="home" asp-action="index" asp-route-subCategoryId="@Model[i].Id" asp-route-subCategoryName="@Model[i].Name"  class="dropdown-item dropdown-toggle">@Model[i].Name </a>
+			
+			
+			<ul class="dropdown-menu">
+					<li>
+						@for (int j = 0; j < Model[i].Posts.Count; j++)
+						{
+
+							<a asp-controller="home" asp-action="details" asp-route-postId="@Model[i].Posts[j].Id" asp-route-postTitle="@Model[i].Posts[j].Title"  class="dropdown-item ">@Model[i].Posts[j].Title </a>
+						}
+						
+					</li>
+
+				</ul>
+			
+			
+			
+			}*@

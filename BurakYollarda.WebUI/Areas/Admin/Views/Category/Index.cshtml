@@ -1,0 +1,43 @@
+﻿@model List<CategoryViewModel>
+<div class="container px-5">
+	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+
+		<div><h2>KATEGORİLER</h2></div>
+		<div><a asp-area="admin" asp-controller="category" asp-action="new" class="btn btn-primary">Yeni Kategori Ekle</a></div>
+	</div>
+
+	<div>
+
+		<table class="table">
+
+			<tr>
+				<th style="width:20px">No</th>
+				<th>Kategori Adı</th>
+				<th style="width:150px"></th>
+			</tr>
+			@{
+				var sayac = 1;
+			}
+			@foreach (var category in Model)
+			{
+
+				<tr>
+					<td>@sayac</td>
+					<td>@category.Name</td>
+
+					<td>
+						<a asp-area="admin" asp-controller="category" asp-action="edit" asp-route-id="@category.Id" class="btn btn-primary">Düzenle</a>
+						<a asp-area="admin" asp-controller="category" asp-action="delete" asp-route-id="@category.Id" class="btn btn-danger">Sil</a>
+					</td>
+				</tr>
+				sayac++;
+			}
+
+
+		</table>
+
+	</div>
+
+
+
+</div>

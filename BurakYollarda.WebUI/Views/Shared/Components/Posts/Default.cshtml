@@ -1,0 +1,35 @@
+﻿@model List<PostViewModel>
+
+	<div class="section-title">
+		<h4>Gezdiğim Yerler</h4>
+	</div>
+
+	<div class="row"> 
+		
+@if (Model.Any())
+{
+	@foreach (var post in Model)
+	{
+		
+		<div class="col-md-4 px-2 mt-4 index-card-grid">
+			<a asp-controller="home" asp-action="details" asp-route-category-id="@post.CategoryId" asp-route-subCategory-id="@post.SubCategoryId" asp-route-id="@post.Id">
+				<div class="card">
+					<div class="index-card-image">
+						<img src="~/images/posts/@post.ImagePath" class="index-card-image" style="">
+					</div>
+					
+					<div class="card-body">
+						<h5 class="card-text">@post.Title</h5>
+						<p class="card-text">@post.Summary</p>
+					</div>
+				</div>
+
+			</a>
+	</div>
+	}
+}
+</div>
+
+
+
+

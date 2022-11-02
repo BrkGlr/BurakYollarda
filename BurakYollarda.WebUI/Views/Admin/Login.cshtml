@@ -1,0 +1,55 @@
+﻿@model LoginViewModel
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-3" style="padding-top:50px">
+
+            <div class="card">
+                <div class="card-header fw-bold fs-5">
+                    Yönetici Girişi
+                </div>
+
+                <div class="card-body">
+                   
+               
+
+                    <form asp-controller="Admin" asp-action="Login" method="post">
+
+                   
+                       
+                        <div class="form-group mb-2">
+                            <label class="form-label required" asp-for="Email"></label>
+                            <input type="email" class="form-control" asp-for="Email" />
+                            <span class="text-danger fw-bold mt-1" asp-validation-for="Email"></span>
+                        </div>
+
+                        <div class="form-group mb-2">
+                            <label class="form-label required" asp-for="Password"></label>
+                            <input type="password" class="form-control" asp-for="Password" />
+                            <span class="text-danger fw-bold mt-1" asp-validation-for="Password"></span>
+                        </div>
+
+                        
+                   
+
+                        <button type="submit" class="btn btn-primary form-control mt-3">Giriş</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+ @section Warning{
+     <script>
+		@if (!string.IsNullOrWhiteSpace(TempData["LoginMessage"]?.ToString()))
+		{
+			@:toastr.error("@TempData["LoginMessage"].ToString()");
+		}
+	</script>
+ }
+
+</div>
+
+ 
+
+
