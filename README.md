@@ -1,2 +1,3 @@
 # BurakYollarda
  Graduation Project
+I started my career with BilgeAdam Academy's .Net Web Development course. Within the training program, I received training on .Net, C#, MVC, HMTL, CSS, Javascript, Entity Framework and MSSQL technologies.In my project, I tried to make a multi-layered holiday blog site based on OOP and in accordance with SOLID principles.My project is not fully completed. I am aware of my shortcomings. I am trying to improve myself in the areas that I feel lacking. If you want to help me on these issues, I'm open to feedback and new ideas. Thanks to everyone for your support.
